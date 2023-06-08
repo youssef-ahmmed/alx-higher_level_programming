@@ -11,7 +11,7 @@ def infinite_add(argv, n):
 
 
 if __name__ == "__main__":
-    
+
     n = len(sys.argv) - 1
     int_argument = [int(arg) for arg in sys.argv[1:]]
     if n == 0:
