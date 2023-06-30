@@ -11,7 +11,7 @@ class Square:
 
         Args:
             size (int): Size of the square
-            position (tuple):
+            position (tuple): Locate the position of square
         """
         self.size = size
         self.position = position
