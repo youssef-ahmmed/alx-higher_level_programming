@@ -3,5 +3,5 @@
 
 
 class Rectangle:
-    """Implement an empty `Recangle` Class"""
+    """Implement an empty `Rectangle` Class"""
     pass
