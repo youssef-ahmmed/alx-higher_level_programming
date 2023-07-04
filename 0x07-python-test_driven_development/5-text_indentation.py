@@ -15,4 +15,3 @@ def text_indentation(text):
                          .replace('. ', '.\n\n')
                          .replace(': ', ':\n\n')
                          .replace('? ', '?\n\n'))
-        
