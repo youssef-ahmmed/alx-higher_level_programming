@@ -11,8 +11,13 @@ def text_indentation(text):
     if not isinstance(text, str):
         raise TypeError("text must be a string")
 
-    formatted_str = (text.replace('. ', '.\n\n').replace('.', '.\n\n')
-                         .replace(': ', ':\n\n').replace(':', '.\n\n')
-                         .replace('? ', '?\n\n').replace('?', '.\n\n'))
+    new_text_list = text.split(' ')
+    new_text_list = [element for element in new_text_list if element != '']
+    new_text = ' '.join(new_text_list)
+    new_text = (new_text
+                .replace('. ', '.').replace('.', '.\n\n')
+                .replace('? ', '?').replace('?', '?\n\n')
+                .replace(': ', ':').replace(':', ':\n\n')
+                )
 
-    print(formatted_str)
+    print(new_text, end='')
