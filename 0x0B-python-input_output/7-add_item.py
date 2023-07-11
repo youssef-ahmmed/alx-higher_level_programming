@@ -14,8 +14,5 @@ if __name__ == '__main__':
     except FileNotFoundError:
         my_list = []
 
-    for arg in sys.argv:
-        if not arg.startswith('./'):
-            my_list.append(arg)
-
+    my_list.extend(sys.argv[1:])
     save_to_json_file(my_list, FILENAME)
