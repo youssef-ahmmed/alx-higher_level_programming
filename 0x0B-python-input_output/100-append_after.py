@@ -13,7 +13,3 @@ def append_after(filename="", search_string="", new_string=""):
                 text += new_string
     with open(filename, mode='w', encoding='UTF-8') as file:
         file.write(text)
-
-
-append_after("append_after_100.txt", "Python", "\"C is fun!\"\n")
-
