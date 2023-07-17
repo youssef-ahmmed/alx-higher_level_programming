@@ -109,7 +109,3 @@ class Base:
 
                 return [cls.create(**dictionary) for dictionary in list_dicts]
         return []
-
-    @staticmethod
-    def draw(list_rectangles, list_squares):
-        """Draws the rectangles and squares using the turtle module"""
