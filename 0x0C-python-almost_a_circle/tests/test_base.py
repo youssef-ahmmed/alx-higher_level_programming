@@ -1,5 +1,5 @@
-import os
 import unittest
+
 from models.base import Base
 from models.rectangle import Rectangle
 from models.square import Square
@@ -57,7 +57,7 @@ class TestBaseInstantiation(unittest.TestCase):
         base = Base(0)
         self.assertEqual(base.id, 0)
 
-    def test_base_with_cmplx_num(self):
+    def test_base_with_complex_num(self):
         base = Base(complex(5, 7))
         self.assertEqual(base.id, complex(5, 7))
 
@@ -83,7 +83,6 @@ class TestBaseInstantiation(unittest.TestCase):
 
 
 class TestBaseToJsonString(unittest.TestCase):
-    """Unittests of to_json_string of Base class"""
 
     def test_to_json_string_with_no_arg(self):
         with self.assertRaises(TypeError):
@@ -111,10 +110,10 @@ class TestBaseToJsonString(unittest.TestCase):
             Base.to_json_string(dict_list_of_set)
 
     def test_to_json_string_list_to_dict_rect(self):
-        r = Rectangle(10, 7, 2, 8)
+        r = Rectangle(10, 7, 2, 8, 7)
         dictionary = r.to_dictionary()
         json_dictionary = Base.to_json_string([dictionary])
-        expected_str = """[{"id": 1, "width": 10, "height": 7, "x": 2, "y": 8}]"""
+        expected_str = """[{"id": 7, "width": 10, "height": 7, "x": 2, "y": 8}]"""
         self.assertEqual(json_dictionary, expected_str)
 
     def test_to_json_string_list_to_dict_square(self):
@@ -152,7 +151,7 @@ class TestBaseFromJsonString(unittest.TestCase):
         self.assertEqual(Base.from_json_string(json_list), expected_list)
 
     def test_from_json_string_list_to_dict_rect(self):
-        r = Rectangle(10, 7, 2, 8)
+        r = Rectangle(10, 7, 2, 8, 1)
         dictionary = r.to_dictionary()
         json_dictionary = Base.to_json_string([dictionary])
         self.assertEqual(Base.from_json_string(json_dictionary), [dictionary])
@@ -167,3 +166,6 @@ class TestBaseFromJsonString(unittest.TestCase):
         with self.assertRaises(TypeError):
             Base.from_json_string(1, 2)
 
+
+if __name__ == '__main__':
+    unittest.main()
