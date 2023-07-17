@@ -1,18 +1,18 @@
 from io import StringIO
-from unittest import *
+import unittest
 from unittest.mock import patch
 
-from models.base import Base
+from models.rectangle import Rectangle
 from models.square import Square
 
 """Defines Unittests for Square class"""
 
 
-class TestSquare(TestCase):
+class TestSquare(unittest.TestCase):
     """Unittests for the new instance of the Square Class"""
 
     def test_square_is_base(self):
-        self.assertIsInstance(Square(10), Base)
+        self.assertIsInstance(Square(10), Rectangle)
 
     def test_square_with_no_arguments(self):
         with self.assertRaises(TypeError):
@@ -50,7 +50,7 @@ class TestSquare(TestCase):
             Square(1, 1, 1, 1, 1, 1)
 
 
-class TestSquareSize(TestCase):
+class TestSquareSize(unittest.TestCase):
     """Unittest for the size attribute of the Square class"""
 
     def test_size_setter_getter(self):
@@ -111,7 +111,7 @@ class TestSquareSize(TestCase):
             Square(0, 0, 0, 9)
 
 
-class TestSquareX(TestCase):
+class TestSquareX(unittest.TestCase):
     """Unittest for the x attribute of the Square class"""
 
     def test_x_setter_getter(self):
@@ -172,7 +172,7 @@ class TestSquareX(TestCase):
             Square(10, -10, 0, 9)
 
 
-class TestSquareY(TestCase):
+class TestSquareY(unittest.TestCase):
     """Unittest for the y attribute of the Square class"""
 
     def test_y_setter_getter(self):
@@ -233,7 +233,7 @@ class TestSquareY(TestCase):
             Square(10, 12, -10, 9)
 
 
-class TestSquareArea(TestCase):
+class TestSquareArea(unittest.TestCase):
     """Unittests for area method of the Square class"""
 
     def test_area_with_argument(self):
@@ -250,7 +250,7 @@ class TestSquareArea(TestCase):
         self.assertEqual(s.area(), 9999999999999999800000000000000001)
 
 
-class TestSquareDisplay(TestCase):
+class TestSquareDisplay(unittest.TestCase):
     """Unittests for display method of the Square class"""
 
     def test_display_with_arguments(self):
@@ -287,7 +287,7 @@ class TestSquareDisplay(TestCase):
             self.assertEqual(fake_out.getvalue(), expected_output)
 
 
-class TestSquareToDictionary(TestCase):
+class TestSquareToDictionary(unittest.TestCase):
     """Unittest for to_dictionary method of the Square class"""
 
     def test_to_dictionary_with_arguments(self):
@@ -328,7 +328,7 @@ class TestSquareToDictionary(TestCase):
         self.assertEqual(s.to_dictionary(), expected_output)
 
 
-class TestSquareToString(TestCase):
+class TestSquareToString(unittest.TestCase):
     """Unittests for __str__ method of the Square class"""
 
     def test_to_string_with_width_height(self):
@@ -352,7 +352,7 @@ class TestSquareToString(TestCase):
         self.assertEqual(r.__str__(), expected_output)
 
 
-class TestSquareUpdate(TestCase):
+class TestSquareUpdate(unittest.TestCase):
     """Unittests for to_update method of the Square class"""
 
     def test_update_with_no_arguments(self):
@@ -470,3 +470,7 @@ class TestSquareUpdate(TestCase):
             'x': 2,
             'y': 3
         })
+
+
+if __name__ == '__main__':
+    unittest.main()

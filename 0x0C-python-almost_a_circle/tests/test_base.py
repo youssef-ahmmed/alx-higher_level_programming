@@ -1,3 +1,4 @@
+import os
 import unittest
 from models.base import Base
 from models.rectangle import Rectangle
@@ -17,23 +18,5 @@ class TestBase(unittest.TestCase):
         self.assertEqual(base4.id, 3)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+if __name__ == '__main__':
+    unittest.main()
