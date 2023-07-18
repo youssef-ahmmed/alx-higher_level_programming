@@ -265,12 +265,12 @@ class TestBaseSaveToFileCSV(unittest.TestCase):
     def test_save_to_file_csv_None(self):
         Square.save_to_file_csv(None)
         with open("Square.csv", "r") as f:
-            self.assertEqual("[]", f.read())
+            self.assertEqual("id,size,x,y\n", f.read())
 
     def test_save_to_file_csv_empty_list(self):
         Rectangle.save_to_file_csv([])
         with open("Rectangle.csv", "r") as f:
-            self.assertEqual("[]", f.read())
+            self.assertEqual("id,width,height,x,y\n", f.read())
 
     def test_save_to_file_csv_rectangle(self):
         r1 = Rectangle(10, 7, 2, 8)
