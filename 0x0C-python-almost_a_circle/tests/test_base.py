@@ -211,6 +211,11 @@ class TestBaseSaveToFile(unittest.TestCase):
         with open('Square.json', 'r') as f:
             self.assertEqual(len(f.read()), 77)
 
+    def test_save_to_file_square_empty(self):
+        Square.save_to_file([])
+        with open('Square.json', 'r') as f:
+            self.assertEqual(len(f.read()), 2)
+
     def test_save_to_file_two_args(self):
         with self.assertRaises(TypeError):
             Base.save_to_file(1, 2)
