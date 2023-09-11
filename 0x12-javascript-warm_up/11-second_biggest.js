@@ -4,6 +4,7 @@ const args = process.argv.slice(2);
 if (!args.length || args.length === 1) {
   console.log(0);
 } else {
-  args.sort();
-  console.log(args[args.length - 2]);
+  const integers = args.map((arg) => parseInt(arg));
+  integers.sort((a, b) => b - a);
+  console.log(integers[1]);
 }
