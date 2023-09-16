@@ -12,7 +12,7 @@ if __name__ == '__main__':
     db_url = f"""
         mysql+mysqldb://{sys.argv[1]}:{sys.argv[2]}@localhost:3306/{sys.argv[3]}
     """
-    engine = create_engine(db_url)
+    engine = create_engine(db_url, pool_pre_ping=True)
 
     Base.metadata.create_all(bind=engine)
 
