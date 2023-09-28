@@ -3,6 +3,7 @@
 
 
 def binary_search_peak(arr, low, high):
+    """binary search like for finding a peak"""
     if low == high:
         return arr[low]
 
@@ -15,6 +16,7 @@ def binary_search_peak(arr, low, high):
 
 
 def find_peak(list_of_integers):
+    """function that finds a peak in a list of unsorted integers."""
     if not list_of_integers:
         return None
 
