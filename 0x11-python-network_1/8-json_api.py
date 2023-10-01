@@ -10,12 +10,12 @@ if __name__ == '__main__':
 
     url = "http://0.0.0.0:5000/search_user"
     try:
-        payload = {'q': argv[1]}
+        q = {'q': argv[1]}
     except IndexError:
-        payload = {'q': ''}
+        q = {'q': ''}
 
     try:
-        req = requests.post(url, data=payload)
+        req = requests.post(url, data=q)
         req_dict = req.json()
     except json.JSONDecodeError as e:
         print("Not a valid JSON")
