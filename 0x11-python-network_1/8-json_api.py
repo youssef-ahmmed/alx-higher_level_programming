@@ -16,7 +16,7 @@ if __name__ == '__main__':
     try:
         req = requests.post(url, data=q)
         req_dict = req.json()
-    except:
+    except Exception:
         print("Not a valid JSON")
         exit()
 
